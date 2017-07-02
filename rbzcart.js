@@ -79,33 +79,4 @@ return returnElements;};}
 return getElementsByClassName(className,tag,elm);};String.prototype.reverse=function(){return this.split("").reverse().join("");};Number.prototype.withCommas=function(){var x=6,y=parseFloat(this).toFixed(2).toString().reverse();while(x<y.length){y=y.substring(0,x)+","+y.substring(x);x+=4;}return y.reverse();};Number.prototype.toCurrency=function(){return(arguments[0]?arguments[0]:"$")+this.withCommas();};function error(message){try{console.log(message);}catch(err){}}
 var simpleCart=new Cart();if(typeof jQuery!=='undefined')$(document).ready(function(){simpleCart.initialize();});else if(typeof Prototype!=='undefined')Event.observe(window,'load',function(){simpleCart.initialize();});else window.onload=simpleCart.initialize;
 
-$(document).ready(function(){
-            //Let's first setup the redirect
-        function redirect(){
-            window.location.assign('http://www.idblogspot.com');
-        }
-
-            //which things we got to check
-        function check(){
-                if($('#mylicense').length === 0){
-                    redirect();
-                }
-
-                else if($('#license').length === 0){
-                    redirect();
-                }
-
-                else if($("#license").attr("href") !== "https://rebozasambirejo.blogspot.com"){
-                    redirect();
-                }
-
-                else if($('#license').text() !== "Muhammad Rosyad D."){
-                    redirect();
-                } 
-            }
-        //execute the function on page load
-        check();
-        //excute the function at the intervals of 5 seconds.
-        setInterval(function () {check()}, 5000);
-        });
 //]]>
